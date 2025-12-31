@@ -64,7 +64,10 @@ export default function Home() {
     </div>
   );
 }
+```
+
 src/pages/About.tsx
+```  bash
 export default function About() {
   return (
     <div>
@@ -73,7 +76,9 @@ export default function About() {
     </div>
   );
 }
+```
 src/pages/Contact.tsx
+```  bash
 export default function Contact() {
   return (
     <div>
@@ -82,7 +87,9 @@ export default function Contact() {
     </div>
   );
 }
+```
 src/pages/NotFound.tsx
+```  bash
 import { Link } from "react-router-dom";
 
 export default function NotFound() {
