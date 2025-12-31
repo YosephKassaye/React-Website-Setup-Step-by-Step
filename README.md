@@ -1,22 +1,27 @@
 Below is a clean step-by-step from zero → a working React website with routing, a layout, navigation, and a couple of pages.
 ________________________________________
 1) Install prerequisites
+``` bash
 A. Install Node.js (LTS)
 •	Download and install Node.js LTS.
 •	Verify:
 node -v
 npm -v
+```
 ________________________________________
 2) Create a new React app (recommended: Vite)
 Open terminal in the folder you want your project:
+```bash
 npm create vite@latest my-website -- --template react-ts
 cd my-website
 npm install
 npm run dev
 You should see a local URL like http://localhost:5173.
+```
 ________________________________________
 3) Clean the starter files a bit
 Open src/App.tsx and replace with something simple:
+``` bash
 export default function App() {
   return (
     <div style={{ padding: 24 }}>
@@ -25,13 +30,17 @@ export default function App() {
     </div>
   );
 }
+```
 ________________________________________
 4) Add Routing (React Router)
 Install React Router:
+```  bash
 npm i react-router-dom
+```
 ________________________________________
 5) Create a basic folder structure
 Inside src/, create:
+```  bash
 src/
   pages/
     Home.tsx
@@ -42,9 +51,11 @@ src/
     MainLayout.tsx
   App.tsx
   main.tsx
+  ```
 ________________________________________
 6) Create pages
 src/pages/Home.tsx
+```  bash
 export default function Home() {
   return (
     <div>
@@ -83,9 +94,11 @@ export default function NotFound() {
     </div>
   );
 }
+```
 ________________________________________
 7) Create a Layout with navigation
 src/layout/MainLayout.tsx
+```  bash
 import { NavLink, Outlet } from "react-router-dom";
 
 const linkStyle = ({ isActive }: { isActive: boolean }) => ({
@@ -122,9 +135,11 @@ export default function MainLayout() {
     </div>
   );
 }
+```
 ________________________________________
 8) Configure Routes in App.tsx
 Replace src/App.tsx with:
+```  bash
 import { Routes, Route } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
 import Home from "./pages/Home";
@@ -144,9 +159,11 @@ export default function App() {
     </Routes>
   );
 }
+```  
 ________________________________________
 9) Wrap the app with BrowserRouter in main.tsx
 Open src/main.tsx and ensure it looks like this:
+```  bash
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
@@ -159,6 +176,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     </BrowserRouter>
   </React.StrictMode>
 );
+```
 ________________________________________
 10) Run it
 npm run dev
